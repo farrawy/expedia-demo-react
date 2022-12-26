@@ -1,0 +1,62 @@
+[
+  {
+    "flightNumber": "AA123",
+    "departureCity": "New York",
+    "arrivalCity": "Los Angeles",
+    "departureAirport": "JFK",
+    "arrivalAirport": "LAX",
+    "departureDate": "January 1, 2022",
+    "departureTime": "8:00 AM",
+    "arrivalTime": "11:00 AM",
+    "price": "$300",
+    "numberOfSeatsAvailable": 50
+  },
+  {
+    "flightNumber": "BA456",
+    "departureCity": "Chicago",
+    "arrivalCity": "San Francisco",
+    "departureAirport": "ORD",
+    "arrivalAirport": "SFO",
+    "departureDate": "January 2, 2022",
+    "departureTime": "9:00 AM",
+    "arrivalTime": "12:00 PM",
+    "price": "$350",
+    "numberOfSeatsAvailable": 40
+  },
+  {
+    "flightNumber": "DL789",
+    "departureCity": "Miami",
+    "arrivalCity": "Seattle",
+    "departureAirport": "MIA",
+    "arrivalAirport": "SEA",
+    "departureDate": "January 3, 2022",
+    "departureTime": "10:00 AM",
+    "arrivalTime": "1:00 PM",
+    "price": "$400",
+    "numberOfSeatsAvailable": 30
+  },
+  {
+    "flightNumber": "UA321",
+    "departureCity": "Boston",
+    "arrivalCity": "Denver",
+    "departureAirport": "BOS",
+    "arrivalAirport": "DEN",
+    "departureDate": "January 4, 2022",
+    "departureTime": "11:00 AM",
+    "arrivalTime": "2:00 PM",
+    "price": "$450",
+    "numberOfSeatsAvailable": 20
+  },
+  {
+    "flightNumber": "FJ654",
+    "departureCity": "Dallas",
+    "arrivalCity": "Portland",
+    "departureAirport": "DFW",
+    "arrivalAirport": "PDX",
+    "departureDate": "January 5, 2022",
+    "departureTime": "12:00 PM",
+    "arrivalTime": "3:00 PM",
+    "price": "$500",
+    "numberOfSeatsAvailable": 10
+  },
+];
