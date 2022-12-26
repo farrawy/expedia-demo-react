@@ -35,6 +35,8 @@ const flights = [
     price: "$350",
     numberOfSeatsAvailable: 40,
     airline: "American Airlines",
+    airlineLogo:
+      "https://s21.q4cdn.com/616071541/files/multimedia-gallery/assets/Logos/american-airlines/THUMB-aa_aa__vrt_rgb_grd_pos.png",
   },
   {
     flightNumber: "DL789",
@@ -49,6 +51,8 @@ const flights = [
     price: "$400",
     numberOfSeatsAvailable: 30,
     airline: "Delta Airlines",
+    airlineLogo:
+      "https://logos-world.net/wp-content/uploads/2021/08/Delta-Emblem.png",
   },
   {
     flightNumber: "UA321",
@@ -63,6 +67,8 @@ const flights = [
     price: "$450",
     numberOfSeatsAvailable: 20,
     airline: "United Airlines",
+    airlineLogo:
+      "https://marka-logo.com/wp-content/uploads/2020/11/United-Airlines-Logo.png",
   },
   {
     flightNumber: "FJ654",
@@ -77,6 +83,8 @@ const flights = [
     price: "$100",
     numberOfSeatsAvailable: 10,
     airline: "Pegasus Airlines",
+    airlineLogo:
+      "https://www.frankfurt-airport.com/content/dam/fraport-travel/airport/fl%C3%BCge-und-airlines/airlines/airline-icons_1_1/PC_Pegasus1.png/_jcr_content/renditions/original./PC_Pegasus1.png",
   },
   {
     flightNumber: "FJ654",
@@ -91,6 +99,8 @@ const flights = [
     price: "$150",
     numberOfSeatsAvailable: 10,
     airline: "Turkish Airlines",
+    airlineLogo:
+      "https://1000logos.net/wp-content/uploads/2020/04/Turkish-Airlines-symbol.png",
   },
 ];
 
