@@ -54,10 +54,6 @@ const Modal = ({
     airlineLogo,
   };
 
-  const name = "Ahmed";
-  const age = 22;
-  const location = "Istanbul";
-
   const handleCheckChange = () => {
     setIsChecked(!isChecked);
   };
@@ -156,11 +152,23 @@ const Modal = ({
             </div>
             {/* Price drop protection end */}
             <Link
-              to={(props) => ({
-                ...props,
-                pathname: "/checkout",
-                state: { name, age, location },
-              })}
+              to={"/checkout"}
+              state={{
+                flightNumber,
+                departureCity,
+                departureAirport,
+                arrivalCity,
+                arrivalAirport,
+                departureTime,
+                arrivalTime,
+                price,
+                numberOfSeatsAvailable,
+                flightTime,
+                departureDate,
+                arrivalDate,
+                airline,
+                airlineLogo,
+              }}
               className="justify-center bg-blue-600 rounded-lg items-center
               text-white inline-flex w-full flex-wrap font-[500]
               hover:bg-blue-700 cursor-pointer p-1 mt-3"

@@ -12,7 +12,7 @@ const Form = () => {
   };
   return (
     <div>
-      <div className="container mx-auto px-4 py-8 border-2 border-gray-300 rounded-lg ">
+      <div className="container mx-auto px-4 py-8 border-2 border-gray-300 rounded-lg mt-10">
         <div className="flex lg:space-x-6 flex-row items-center justify-center pb-5 border-b-2 w-full space-x-3  ">
           <span>Stays</span>
           <span
