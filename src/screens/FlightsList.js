@@ -3,7 +3,9 @@ import DatePicker from "react-datepicker";
 import { MdLocationOn } from "react-icons/md";
 
 import "react-datepicker/dist/react-datepicker.css";
-import FlightsResult from "./FlightsResult";
+import FlightsResult from "../components/FlightsResult";
+import Modal from "../components/Modal";
+import Checkout from "./Checkout";
 
 const flights = [
   {
@@ -16,7 +18,7 @@ const flights = [
     departureTime: "8:00 AM",
     arrivalTime: "11:00 AM",
     flightTime: "3h",
-    price: "$300",
+    price: 300,
     numberOfSeatsAvailable: 50,
     airline: "American Airlines",
     airlineLogo:
@@ -32,7 +34,7 @@ const flights = [
     departureTime: "9:00 AM",
     arrivalTime: "12:00 PM",
     flightTime: "3h",
-    price: "$350",
+    price: 350,
     numberOfSeatsAvailable: 40,
     airline: "American Airlines",
     airlineLogo:
@@ -48,7 +50,7 @@ const flights = [
     departureTime: "10:00 AM",
     arrivalTime: "1:00 PM",
     flightTime: "3h",
-    price: "$400",
+    price: 400,
     numberOfSeatsAvailable: 30,
     airline: "Delta Airlines",
     airlineLogo:
@@ -64,7 +66,7 @@ const flights = [
     departureTime: "11:00 AM",
     arrivalTime: "2:00 PM",
     flightTime: "3h",
-    price: "$450",
+    price: 450,
     numberOfSeatsAvailable: 20,
     airline: "United Airlines",
     airlineLogo:
@@ -80,7 +82,7 @@ const flights = [
     departureTime: "12:00 PM",
     arrivalTime: "3:00 PM",
     flightTime: "3h",
-    price: "$100",
+    price: 100,
     numberOfSeatsAvailable: 10,
     airline: "Pegasus Airlines",
     airlineLogo:
@@ -96,7 +98,7 @@ const flights = [
     departureTime: "12:00 PM",
     arrivalTime: "3:00 PM",
     flightTime: "3h",
-    price: "$150",
+    price: 150,
     numberOfSeatsAvailable: 10,
     airline: "Turkish Airlines",
     airlineLogo:
@@ -110,6 +112,8 @@ const FlightsList = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [departureDate, setDepartureDate] = useState(new Date());
   const [arrivalDate, setArrivalDate] = useState(new Date());
+  //modal
+  const [isOpen, setIsOpen] = useState(false);
 
   function handleDepartureCityChange(event) {
     setDepartureCity(event.target.value);
@@ -138,10 +142,6 @@ const FlightsList = () => {
     setFilteredData(filtered);
   }
 
-  useEffect(() => {
-    console.log(departureDate);
-  }, []);
-
   return (
     <div>
       <form
@@ -149,46 +149,54 @@ const FlightsList = () => {
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 items-center justify-center flex-col text-center"
       >
         <div>
-          <div className="mb-4 flex-row flex">
+          <div className="mb-4 flex-wrap flex -mx-2">
             {/* departure city */}
-            <select
-              value={departureCity}
-              onChange={handleDepartureCityChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            >
-              {flights.map((city) => (
-                <option value={city.departureCity}>
-                  <p>
-                    {city.departureCity} ({city.departureAirport})
-                  </p>
-                </option>
-              ))}
-            </select>
+            <div className="w-full md:w-1/2 px-2 mb-4 ">
+              <select
+                value={departureCity}
+                onChange={handleDepartureCityChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              >
+                {flights.map((city) => (
+                  <option value={city.departureCity}>
+                    <p>
+                      {city.departureCity} ({city.departureAirport})
+                    </p>
+                  </option>
+                ))}
+              </select>
+            </div>
 
             {/* arrival city */}
-            <select
-              value={arrivalCity}
-              onChange={handleArrivalCityChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            >
-              {flights.map((city) => (
-                <option value={city.arrivalCity}>
-                  {city.arrivalCity} ({city.arrivalAirport})
-                </option>
-              ))}
-            </select>
+            <div className="w-full md:w-1/2 px-2 mb-4 ">
+              <select
+                value={arrivalCity}
+                onChange={handleArrivalCityChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              >
+                {flights.map((city) => (
+                  <option value={city.arrivalCity}>
+                    {city.arrivalCity} ({city.arrivalAirport})
+                  </option>
+                ))}
+              </select>
+            </div>
 
-            <DatePicker
-              selected={departureDate}
-              onChange={handleDepartureDateChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
+            <div className="w-full md:w-1/2 px-2 mb-4 ">
+              <DatePicker
+                selected={departureDate}
+                onChange={handleDepartureDateChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
 
-            <DatePicker
-              selected={arrivalDate}
-              onChange={handleArrivalDateChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
+            <div className="w-full md:w-1/2 px-2 mb-4 ">
+              <DatePicker
+                selected={arrivalDate}
+                onChange={handleArrivalDateChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
           </div>
 
           <button

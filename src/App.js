@@ -1,12 +1,17 @@
 import React from "react";
-import FlightsList from "./components/FlightsList";
-import Form from "./components/Form";
-import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Checkout from "./screens/Checkout";
+import Home from "./screens/Home";
 
 function App() {
   return (
     <div>
-      <Form />
+      <Router>
+        <Routes>
+          <Route path="/" component={Home} />
+          <Route path="/checkout" component={Checkout} />
+        </Routes>
+      </Router>
     </div>
   );
 }
